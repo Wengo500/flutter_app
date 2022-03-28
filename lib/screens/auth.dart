@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:first_project/services/auth.dart';
 import 'package:flutter/material.dart';
@@ -117,14 +118,14 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
       );
     }
 
-    void _loginButtonAction() async {
+    void _loginButtonAction() {
       _email = _emailController.text;
       _password = _passwordController.text;
       _emailController.clear();
       _passwordController.clear();
     }
 
-    void _registerButtonAction() async {
+    void _registerButtonAction() {
       _email = _emailController.text;
       _password = _passwordController.text;
       _emailController.clear();
