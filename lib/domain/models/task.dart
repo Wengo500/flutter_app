@@ -12,13 +12,13 @@ class Task{
     required this.progress,
     required this.subtask
 });
-  factory Task.dataFromInputs(Map<String, dynamic> domain){
-    return Task(
-      name: domain['name'],
-      description: domain['name'],
-      progress: domain['name'],
-      subtask: domain['name'],
-    );
-  }
+  // factory Task.dataFromInputs(Map<String, dynamic> domain){
+  //   return Task(
+  //     name: domain['name'],
+  //     description: domain['name'],
+  //     progress: domain['name'],
+  //     subtask: domain['name'],
+  //   );
+  // }
 }
 
