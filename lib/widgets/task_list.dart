@@ -11,7 +11,7 @@ class TasksList extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
 
         if (!snapshot.hasData) return const Text('hasData is false');
-        final iterableList = snapshot.data!.docs[1].get('subtasks');
+        // final iterableList = snapshot.data!.docs[0].get('subtasks');
         return DraggableScrollableSheet(
             initialChildSize: .65,
             minChildSize: .65,
@@ -40,7 +40,8 @@ class TasksList extends StatelessWidget {
                 Expanded(
                   child: ListView.builder(
                       controller: scrollController,
-                      itemCount: iterableList.length,
+                      itemCount: 1,
+                      // itemCount: iterableList.length,
                       itemBuilder: (BuildContext context, int i) {
                         return Card(
                           elevation: 2.0,
@@ -65,16 +66,16 @@ class TasksList extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              title: Text(
-                                iterableList[i]['name'],
-                                style: TextStyle(
-                                    color: Theme.of(context).colorScheme.secondary),
-                              ),
+                              // title: Text(
+                              //   iterableList[i]['name'],
+                              //   style: TextStyle(
+                              //       color: Theme.of(context).colorScheme.secondary),
+                              // ),
                               trailing: Icon(Icons.keyboard_arrow_right,
                                   color: Theme.of(context).colorScheme.secondary),
-                              subtitle: Text(iterableList[i]['description'],
-                                  style: Theme.of(context).textTheme.subtitle2
-                              )
+                              // subtitle: Text(iterableList[i]['description'],
+                              //     style: Theme.of(context).textTheme.subtitle2
+                              // )
                             ),
                           ),
                         );

@@ -2,8 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/create_subtask/bloc.dart';
-import '../bloc/create_subtask/event.dart';
 import '../bloc/create_tasks_input_data/bloc.dart';
 import '../bloc/create_tasks_input_data/state.dart';
 import '../widgets/create_task_page_banner.dart';
@@ -37,8 +35,6 @@ class CreateTaskPage extends StatelessWidget {
 }
 
 Widget CreateTaskButton(BuildContext context, blockState) {
-  final CreateSubtask createSubtask = context.read<CreateSubtask>();
-
   return Align(
         alignment: Alignment.bottomCenter,
         child: SizedBox(
@@ -46,7 +42,6 @@ Widget CreateTaskButton(BuildContext context, blockState) {
           height: 50,
           child: ElevatedButton(
             onPressed: () {
-              createSubtask.add(CreateTaskEvent(subtaskBlockData: {'a': 'a'}));
               FirebaseFirestore.instance.collection('model').add({
                 'name': blockState.name,
                 'description': blockState.description,
