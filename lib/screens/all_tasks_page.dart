@@ -11,12 +11,23 @@ class AllTasksPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff652494),
         title: const Center(
-          child: Text('All model'),
+          child: Text('All tasks'),
         ),
       ),
       body: Container(
-        color: Theme.of(context).primaryColor,
+        decoration: const BoxDecoration(
+          gradient: SweepGradient(
+            center: Alignment(-1.1, 1),
+            colors: [
+              Color.fromRGBO(77, 122, 231, 1.0),
+              Color.fromRGBO(241, 0, 0, 1.0),
+              Color.fromRGBO(60, 0, 191, 1.0),
+            ],
+              stops: <double>[0.6, 0, 1]
+          ),
+        ),
         child: StreamBuilder(
         stream: FirebaseFirestore.instance.collection('model').snapshots(),
           builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
@@ -43,7 +54,7 @@ class AllTasksPage extends StatelessWidget {
                  return index == 0 ? addNewTaskButton(context) :
                     Card(
                       color: const Color.fromRGBO(
-                          71, 112, 195, 1.0),
+                          139, 147, 207, 0.050980392156862744),
                       child: Center(
                         child: ListTile(
                           title: Padding(
@@ -79,7 +90,7 @@ Widget addNewTaskButton (BuildContext context) {
       );
     },
     child: const Card(
-      color: Color.fromRGBO( 71, 112, 195, 1.0),
+      color: Color.fromRGBO(139, 147, 207, 0.050980392156862744),
       child: Icon(Icons.add, color: Colors.white, size: 100,)
       ),
   );

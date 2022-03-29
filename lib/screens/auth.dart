@@ -1,8 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:first_project/services/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+import '../bloc/auth/bloc.dart';
+import '../bloc/auth/event.dart';
+import '../domain/models/task.dart';
 
 class AuthorizationPage extends StatefulWidget {
   const AuthorizationPage({Key? key}) : super(key: key);
@@ -14,12 +20,13 @@ class AuthorizationPage extends StatefulWidget {
 class _AuthorizationPageState extends State<AuthorizationPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   late String _email;
   late String _password;
   bool showLogin = true;
 
-  AuthService _authService = AuthService();
+  AuthRepository _authService = AuthRepository();
 
   @override
 
@@ -68,21 +75,15 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
     }
 
     Widget _button(String text, void fanc()) {
-      return RaisedButton(
-        splashColor: Theme
-            .of(context)
-            .primaryColor,
-        highlightColor: Theme
-            .of(context)
-            .primaryColor,
-        color: Colors.white,
+      return ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          primary: const Color.fromRGBO(36, 84, 133, 0.6431372549019608),
+        ),
         onPressed: () => fanc(),
         child: Text(
           text,
-          style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 20, color: Theme
-              .of(context)
-              .primaryColor),
+          style: const TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
         ),
       );
     }
@@ -117,8 +118,24 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
         ]),
       );
     }
-
+    void _signInWithEmailAndPassword(context) {
+      if (_formKey.currentState!.validate()) {
+        // If email is valid adding new event [SignUpRequested].
+        BlocProvider.of<AuthBloc>(context).add(
+          SignUpRequested(_emailController.text, _passwordController.text),
+        );
+      }
+    }
+    void _signUpWithEmailAndPassword(context) {
+      if (_formKey.currentState!.validate()) {
+        // If email is valid adding new event [SignUpRequested].
+        BlocProvider.of<AuthBloc>(context).add(
+          SignUpRequested(_emailController.text, _passwordController.text),
+        );
+      }
+    }
     void _loginButtonAction() {
+
       _email = _emailController.text;
       _password = _passwordController.text;
       _emailController.clear();

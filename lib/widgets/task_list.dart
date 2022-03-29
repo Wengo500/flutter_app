@@ -11,7 +11,7 @@ class TasksList extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
 
         if (!snapshot.hasData) return const Text('hasData is false');
-        final iterableList = snapshot.data!.docs[0].get('subtasks');
+        final iterableList = snapshot.data!.docs[1].get('subtasks');
         return DraggableScrollableSheet(
             initialChildSize: .65,
             minChildSize: .65,

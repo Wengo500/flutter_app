@@ -1,22 +1,18 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/create_subtask/bloc.dart';
 import '../bloc/create_subtask/event.dart';
 import '../bloc/create_subtask/state.dart';
-import '../bloc/create_tasks_input_data/bloc.dart';
-import '../bloc/create_tasks_input_data/event.dart';
-import '../domain/models/task.dart';
 
 Widget SubtaskBlockList(BuildContext context) {
 
   return BlocBuilder<CreateSubtask, SubtaskState>(
       builder: (context, state) {
       return ListView.builder(
-          itemCount: state.subtasksList.length + 1,
+          itemCount: state.blockList.length + 1,
           itemBuilder: (BuildContext context, int i) {
-            return i == state.subtasksList.length ? AddBlockBtn(context) : SubtaskBlock(context);
+            return i == state.blockList.length ? AddBlockBtn(context) : SubtaskBlock(context, i);
           }
       );
     }
@@ -38,14 +34,14 @@ Widget AddBlockBtn(BuildContext context) {
   );
 }
 
-Widget SubtaskBlock(BuildContext context) {
-  final CreateTaskInputData textBloc = context.read<CreateTaskInputData>();
+Widget SubtaskBlock(BuildContext context, int idx) {
+  final CreateSubtask createSubtask = context.read<CreateSubtask>();
   return Container(
     margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
     padding: const EdgeInsets.all(15),
     decoration: BoxDecoration(
-      color: const Color.fromRGBO(46, 78, 160, 0.7372549019607844),
-      borderRadius: BorderRadius.circular(20),
+      color: const Color.fromRGBO(46, 78, 160, 1.0),
+      borderRadius: BorderRadius.circular(10),
     ),
     child: Column(
       children: <Widget>[
@@ -57,7 +53,7 @@ Widget SubtaskBlock(BuildContext context) {
             hintStyle: TextStyle(color: Colors.white54, fontWeight: FontWeight.w300),
           ),
           onChanged: (String value){
-            textBloc.add(AddNameEvent(name: value));
+            createSubtask.add(SubtaskNameEvent(name: value, blockIndex: idx));
           },
         ),
         const SizedBox(height: 20,),
@@ -71,7 +67,7 @@ Widget SubtaskBlock(BuildContext context) {
             hintText: 'Enter subtask description',
           ),
           onChanged: (String value){
-            textBloc.add(AddDescriptionEvent(description: value));
+            createSubtask.add(SubtaskDescriptionEvent(description: value, blockIndex: idx));
           },
         ),
       ],

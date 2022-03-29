@@ -1,9 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:first_project/bloc/create_tasks_input_data/bloc.dart';
 import 'package:first_project/screens/lending.dart';
+import 'package:first_project/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'bloc/auth/bloc.dart';
 import 'bloc/create_subtask/bloc.dart';
 
 void main() async {
@@ -21,6 +23,11 @@ class FirstApp extends StatelessWidget{
     const appName = 'First App';
     return  MultiBlocProvider(
       providers: [
+        BlocProvider<AuthBloc>(
+          create: (BuildContext context) => AuthBloc(
+              authRepository: RepositoryProvider.of<AuthRepository>(context)
+          ),
+        ),
         BlocProvider<CreateTaskInputData>(
           create: (BuildContext context) => CreateTaskInputData(),
         ),

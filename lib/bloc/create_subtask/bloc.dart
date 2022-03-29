@@ -4,30 +4,38 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'event.dart';
 
 class CreateSubtask extends Bloc <SubtaskEvent, SubtaskState> {
-  CreateSubtask() : super(NewSubtaskState(subtasksList: [], name: '', description: '', blockList: [])){
+  CreateSubtask() : super(NewSubtaskState(
+      blockIndex: null,
+      name: '',
+      description: '',
+      blockList: [],
+      subtasksList: [])){
     on<SubtaskNameEvent>((event, emit) => emit(NewSubtaskState(
+      blockIndex: event.blockIndex,
       name: event.name,
       description: state.description,
-      subtasksList: [],
-      blockList: state.blockList
+      blockList: state.blockList,
+      subtasksList: [
+        ...state.blockList,
+        if(state.blockIndex == event.blockIndex){'name': event.name, 'description': state.description}
+      ],
     )));
     on<SubtaskDescriptionEvent>((event, emit) => emit(NewSubtaskState(
+      blockIndex: event.blockIndex,
       name: state.name,
       description: event.description,
-      subtasksList: [],
-      blockList: state.blockList
+      blockList: state.blockList,
+      subtasksList: [
+        ...state.blockList,
+        if(state.blockIndex == event.blockIndex){'name': state.name, 'description': event.description}
+      ],
     )));
     on<SubtaskAddBlockEvent>((event, emit) => emit(NewSubtaskState(
+      blockIndex: state.blockIndex,
       name: state.name,
       description: state.description,
-      subtasksList: [...state.subtasksList, state.subtasksList.length],
-      blockList: []
-    )));
-    on<CreateTaskEvent>((event, emit) => emit(NewSubtaskState(
-        name: state.name,
-        description: state.description,
-        subtasksList: state.subtasksList,
-        blockList: []
+      blockList: [...state.blockList, state.blockList.length],
+      subtasksList: state.subtasksList,
     )));
   }
 }

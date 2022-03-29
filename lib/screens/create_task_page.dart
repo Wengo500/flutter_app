@@ -1,8 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/create_tasks_input_data/bloc.dart';
+import '../bloc/create_tasks_input_data/event.dart';
 import '../bloc/create_tasks_input_data/state.dart';
 import '../widgets/create_task_page_banner.dart';
 import '../widgets/subtask_block_list.dart';
@@ -19,7 +19,16 @@ class CreateTaskPage extends StatelessWidget {
       body: BlocBuilder<CreateTaskInputData, TextState>(
         builder: (context, state) {
           return Container(
-            color: Theme.of(context).primaryColor,
+            decoration: const BoxDecoration(
+              gradient: RadialGradient(
+                center: Alignment(-0.8, -0.6),
+                colors: [
+                  Color.fromRGBO(3, 235, 255, 1),
+                  Color.fromRGBO(82, 24, 152, 1.0)
+                ],
+                radius: 1.0,
+              ),
+            ),
             child: Column(
               children: [
                 CreateTaskPageBanner(context),
@@ -35,6 +44,7 @@ class CreateTaskPage extends StatelessWidget {
 }
 
 Widget CreateTaskButton(BuildContext context, blockState) {
+  final CreateTaskInputData createTask = context.read<CreateTaskInputData>();
   return Align(
         alignment: Alignment.bottomCenter,
         child: SizedBox(
@@ -42,32 +52,9 @@ Widget CreateTaskButton(BuildContext context, blockState) {
           height: 50,
           child: ElevatedButton(
             onPressed: () {
-              FirebaseFirestore.instance.collection('model').add({
-                'name': blockState.name,
-                'description': blockState.description,
-                'progress': 0.33,
-                'subtasks': [
-                  {
-                    'name': 'Task 1',
-                    'description': 'Task 1 description',
-                    'expiredDate': '04.03.2022',
-                    'status': 'completed'
-                  },
-                  {
-                    'name': 'Task 2',
-                    'description': 'Task 2 description',
-                    'expiredDate': '06.03.2022',
-                    'status': 'overdue'
-                  },
-                  {
-                    'name': 'Task 3',
-                    'description': 'Task 3 description',
-                    'expiredDate': '08.03.2022',
-                    'status': 'expected'
-                  }
-                ],
-              });
-          }, child: const Text('Create task', style: TextStyle(fontSize: 30),)),
+              createTask.add(CreateTaskEvent(subtaskList: []));
+              Navigator.pop(context);
+            }, child: const Text('Create task', style: TextStyle(fontSize: 30),)),
         )
     );
 }

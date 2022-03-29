@@ -12,13 +12,17 @@ class Task{
     required this.progress,
     required this.subtask
 });
-  // factory Task.dataFromInputs(Map<String, dynamic> domain){
-  //   return Task(
-  //     name: domain['name'],
-  //     description: domain['name'],
-  //     progress: domain['name'],
-  //     subtask: domain['name'],
-  //   );
-  // }
+  factory Task.fromJson(Map<dynamic, dynamic> json){
+    return Task(
+      name: json['name'],
+      description: json['description'],
+      progress: json['progress'],
+      subtask: [],
+    );
+  }
+  factory Task.fromSnapshot(DocumentSnapshot snapshot) {
+    final newTask = Task.fromJson(snapshot.data() as Map<String, dynamic>);
+    return newTask;
+  }
 }
 
