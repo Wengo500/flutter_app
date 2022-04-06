@@ -1,28 +1,34 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:first_project/bloc/create_tasks_input_data/bloc.dart';
-import 'package:first_project/screens/lending.dart';
-import 'package:first_project/services/auth.dart';
+import 'package:first_project/presentations/screens/lending.dart';
+import 'package:first_project/data/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/auth/bloc.dart';
 import 'bloc/create_subtask/bloc.dart';
+import 'bloc/rick_and_morty_bloc/bloc.dart';
+import 'data/repository/character_repo.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const FirstApp());
+  runApp(FirstApp());
 }
 
 
 class FirstApp extends StatelessWidget{
-  const FirstApp({Key? key}) : super(key: key);
+   FirstApp({Key? key}) : super(key: key);
 
+  final repository = CharacterRepo();
   @override
   Widget build(BuildContext context){
     const appName = 'First App';
     return  MultiBlocProvider(
       providers: [
+        BlocProvider<CharacterBlock>(
+          create: (BuildContext context) => CharacterBlock(characterRepo: repository),
+        ),
         BlocProvider<AuthBloc>(
           create: (BuildContext context) => AuthBloc(
               authRepository: RepositoryProvider.of<AuthRepository>(context)

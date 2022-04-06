@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/create_tasks_input_data/bloc.dart';
-import '../bloc/create_tasks_input_data/event.dart';
-import '../bloc/create_tasks_input_data/state.dart';
+import '../../bloc/create_tasks_input_data/bloc.dart';
+import '../../bloc/create_tasks_input_data/event.dart';
+import '../../bloc/create_tasks_input_data/state.dart';
 import '../widgets/create_task_page_banner.dart';
 import '../widgets/subtask_block_list.dart';
 
@@ -14,6 +14,7 @@ class CreateTaskPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor:  Colors.deepPurple,
         title: const Text('Create task'),
       ),
       body: BlocBuilder<CreateTaskInputData, TextState>(
@@ -29,10 +30,10 @@ class CreateTaskPage extends StatelessWidget {
                 radius: 1.0,
               ),
             ),
-            child: Column(
+            child: Stack(
               children: [
+                SubtaskBlockList(context),
                 CreateTaskPageBanner(context),
-                Expanded(child: SubtaskBlockList(context)),
                 CreateTaskButton(context, state)
               ],
             ),

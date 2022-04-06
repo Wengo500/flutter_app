@@ -2,7 +2,6 @@ abstract class TextState {
   get description => null;
   get name => null;
   get subtasksList => null;
-
 }
 
 class TextAddedState extends TextState {

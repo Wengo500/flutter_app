@@ -1,14 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:first_project/services/auth.dart';
+import 'package:first_project/data/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
-import '../bloc/auth/bloc.dart';
-import '../bloc/auth/event.dart';
-import '../domain/models/task.dart';
+import '../../bloc/auth/bloc.dart';
+import '../../bloc/auth/event.dart';
 
 class AuthorizationPage extends StatefulWidget {
   const AuthorizationPage({Key? key}) : super(key: key);

@@ -11,7 +11,9 @@ class CreateTaskInputData extends Bloc <TextEvent, TextState> {
         'name': state.name,
         'description': state.description,
         'progress': 0.33,
-        'subtasks': state.subtasksList,
+        'subtasks': [
+          {'name': 'sub name', 'description': 'desk', 'blockIndex': 1}
+            ],
       }),
     };
     on<AddNameEvent>((event, emit) => emit(TextAddedState(

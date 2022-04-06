@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/create_subtask/bloc.dart';
-import '../bloc/create_subtask/event.dart';
-import '../bloc/create_subtask/state.dart';
+import '../../bloc/create_subtask/bloc.dart';
+import '../../bloc/create_subtask/event.dart';
+import '../../bloc/create_subtask/state.dart';
 
 Widget SubtaskBlockList(BuildContext context) {
 
   return BlocBuilder<CreateSubtask, SubtaskState>(
       builder: (context, state) {
-      return ListView.builder(
-          itemCount: state.blockList.length + 1,
+        return ListView.builder(
+          itemCount: state.blockList.length + 2,
           itemBuilder: (BuildContext context, int i) {
-            return i == state.blockList.length ? AddBlockBtn(context) : SubtaskBlock(context, i);
+            return i == 0 ? const SizedBox(height: 290) :
+            i == state.blockList.length + 1 ? AddBlockBtn(context) : SubtaskBlock(context, i);
           }
       );
     }
@@ -22,7 +23,7 @@ Widget AddBlockBtn(BuildContext context) {
   final CreateSubtask createSubtask = context.read<CreateSubtask>();
 
   return  Padding(
-    padding: const EdgeInsets.only(bottom: 20),
+    padding: const EdgeInsets.only(bottom: 60),
     child: Center(
       child: ElevatedButton(
         onPressed: (){
@@ -37,7 +38,7 @@ Widget AddBlockBtn(BuildContext context) {
 Widget SubtaskBlock(BuildContext context, int idx) {
   final CreateSubtask createSubtask = context.read<CreateSubtask>();
   return Container(
-    margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+    margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
     padding: const EdgeInsets.all(15),
     decoration: BoxDecoration(
       color: const Color.fromRGBO(46, 78, 160, 1.0),

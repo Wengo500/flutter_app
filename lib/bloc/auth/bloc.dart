@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:first_project/bloc/auth/state.dart';
 
-import '../../services/auth.dart';
+import '../../data/services/auth.dart';
 import 'event.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
