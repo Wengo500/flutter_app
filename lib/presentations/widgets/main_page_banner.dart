@@ -6,61 +6,74 @@ class MainPageBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final counterWidth = MediaQuery.of(context).size.width * .4;
-    return Column(
-      children: <Widget>[
-        const Padding(
-          padding: EdgeInsets.only(top: 15, bottom: 20),
-          child: Center(
-            child: Text(
-              'Task name',
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.white,
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color.fromRGBO(16, 0, 28, 1.0),
+              Color.fromRGBO(22, 22, 26, 1.0)
+            ],
+            stops: <double>[0.17, 0.8,]
+        ),
+      ),
+      child: Column(
+        children: <Widget>[
+          const Padding(
+            padding: EdgeInsets.only(top: 15, bottom: 20),
+            child: Center(
+              child: Text(
+                'Task name',
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            taskTimeFrame(context, 'Start date', '2022.03.01'),
-            Container(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              taskTimeFrame(context, 'Start date', '2022.03.01'),
+              Container(
 
-                width: counterWidth,
-                height: counterWidth,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                    color: const Color.fromRGBO(255, 253, 253, 0.6627450980392157),
-                    borderRadius: BorderRadius.circular(100),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color.fromRGBO(2, 33, 95, .6),
-                      offset: Offset(4.0, 4.0),
-                      spreadRadius: 3,
-                      blurRadius: 10,
-                    ),
-                    BoxShadow(
-                      color: Color.fromRGBO(203, 217, 246, .8),
-                      offset: Offset(-4.0, -4.0),
-                      spreadRadius: 1,
-                      blurRadius: 10,
-                    ),
-                  ],
-                ),
-                child: const FittedBox(
-                  fit: BoxFit.contain,
-                  child: Text(
-                    '220',
-                    style: TextStyle(
-                      fontSize: 50,
-                      color: Colors.indigo,
-                    ),
+                  width: counterWidth,
+                  height: counterWidth,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      color: const Color.fromRGBO(255, 253, 253, 0.6627450980392157),
+                      borderRadius: BorderRadius.circular(100),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color.fromRGBO(2, 33, 95, .6),
+                        offset: Offset(4.0, 4.0),
+                        spreadRadius: 3,
+                        blurRadius: 10,
+                      ),
+                      BoxShadow(
+                        color: Color.fromRGBO(203, 217, 246, .8),
+                        offset: Offset(-4.0, -4.0),
+                        spreadRadius: 1,
+                        blurRadius: 10,
+                      ),
+                    ],
                   ),
-                )),
-            taskTimeFrame(context, 'Finish date', '2022.04.30'),
-          ],
-        )
-      ],
+                  child: const FittedBox(
+                    fit: BoxFit.contain,
+                    child: Text(
+                      '220',
+                      style: TextStyle(
+                        fontSize: 50,
+                        color: Colors.indigo,
+                      ),
+                    ),
+                  )),
+              taskTimeFrame(context, 'Finish date', '2022.04.30'),
+            ],
+          )
+        ],
+      ),
     );
   }
 }

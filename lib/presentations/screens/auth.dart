@@ -1,9 +1,8 @@
-import 'package:first_project/data/services/auth.dart';
+import 'package:first_project/data/repository/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/auth/bloc.dart';
-import '../../bloc/auth/event.dart';
 
 class AuthorizationPage extends StatefulWidget {
   const AuthorizationPage({Key? key}) : super(key: key);

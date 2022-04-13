@@ -1,6 +1,9 @@
+part of 'bloc.dart';
+
 abstract class AuthState {}
 
-// When the user presses the signin or signup button the state is changed to loading first and then to Authenticated.
+// When the user presses the signin or signup button the state is
+// changed to loading first and then to Authenticated.
 class Loading extends AuthState {
   List<Object?> get props => [];
 }
@@ -10,7 +13,8 @@ class Authenticated extends AuthState {
   List<Object?> get props => [];
 }
 
-// This is the initial state of the bloc. When the user is not authenticated the state is changed to Unauthenticated.
+// This is the initial state of the bloc. When the user is not
+// authenticated the state is changed to Unauthenticated.
 class UnAuthenticated extends AuthState {
   List<Object?> get props => [];
 }

@@ -42,15 +42,3 @@ class AuthRepository{
     }
   }
 }
-
-// class AuthService {
-//   final FirebaseAuth _fAuth = FirebaseAuth.instance;
-//
-//   Future signInWithEmailAndPassword(String email, String password) async{
-//
-//   }
-//
-//   Future logOut() async {
-//     await _fAuth.signOut();
-//   }
-// }

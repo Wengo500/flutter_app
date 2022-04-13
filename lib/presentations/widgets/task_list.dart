@@ -21,28 +21,28 @@ class TasksList extends StatelessWidget {
 
 Widget subtaskDraggableList (BuildContext context, List iterableList) {
   return DraggableScrollableSheet(
-      initialChildSize: .65,
-      minChildSize: .65,
+      initialChildSize: .6,
+      minChildSize: .6,
       maxChildSize: .91,
       snap: true,
       builder: (BuildContext context, ScrollController scrollController) {
         return Container(
           padding: const EdgeInsets.only(top: 10),
           decoration: const BoxDecoration(
-            color: Color.fromRGBO(157, 207, 245, 1.0),
+            color: Color.fromRGBO(45, 44, 60, 1.0),
             borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
           ),
           child: Column(
             children: [
-              Center(child:
-              Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text('Items',
-                  style: TextStyle(
-                      fontSize: 30,
-                      color: Theme.of(context).colorScheme.primary
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text('Items',
+                    style: TextStyle(
+                        fontSize: 30,
+                        color: Theme.of(context).colorScheme.primary
+                    ),
                   ),
-                ),
               )
               ),
               Expanded(
@@ -50,14 +50,16 @@ Widget subtaskDraggableList (BuildContext context, List iterableList) {
                     controller: scrollController,
                     itemCount: iterableList.length,
                     itemBuilder: (BuildContext context, int i) {
-                      return Card(
-                        elevation: 2.0,
-                        margin:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                        child: Container(
-                          decoration: const BoxDecoration(
-                              color: Color.fromRGBO(37, 77, 159, 0.7568627450980392)
-                          ),
+                      return Container(
+                        height: 100,
+                        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                            color: const Color.fromRGBO(
+                                53, 54, 85, 1)
+                        ),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
                           child: ListTile(
                               contentPadding: const EdgeInsets.symmetric(horizontal: 10),
                               leading: Container(
@@ -85,8 +87,8 @@ Widget subtaskDraggableList (BuildContext context, List iterableList) {
                               )
                           ),
                         ),
-                      );
-                    }),
+                    );
+                  }),
               ),
             ],
           ),
