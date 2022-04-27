@@ -1,9 +1,10 @@
+import 'package:first_project/domain/bloc/create_tasks_input_data/bloc.dart';
+import 'package:first_project/domain/bloc/create_tasks_input_data/event.dart';
+import 'package:first_project/domain/bloc/create_tasks_input_data/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../bloc/create_tasks_input_data/bloc.dart';
-import '../../bloc/create_tasks_input_data/event.dart';
-import '../../bloc/create_tasks_input_data/state.dart';
+
 import '../widgets/create_task_page_banner.dart';
 import '../widgets/subtask_block_list.dart';
 

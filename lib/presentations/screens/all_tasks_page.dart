@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -7,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
-import '../../generated/l10n.dart';
+import '../../internal/generated/l10n.dart';
 import 'create_task_page.dart';
 
 class AllTasksPage extends StatelessWidget {

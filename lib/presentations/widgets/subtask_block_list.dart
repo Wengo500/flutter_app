@@ -1,9 +1,8 @@
+import 'package:first_project/domain/bloc/create_subtask/bloc.dart';
+import 'package:first_project/domain/bloc/create_subtask/event.dart';
+import 'package:first_project/domain/bloc/create_subtask/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../bloc/create_subtask/bloc.dart';
-import '../../bloc/create_subtask/event.dart';
-import '../../bloc/create_subtask/state.dart';
 
 Widget SubtaskBlockList(BuildContext context) {
 

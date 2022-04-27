@@ -15,3 +15,7 @@ class CreateTaskEvent extends TextEvent {
   final List? subtaskList;
   CreateTaskEvent({required this.subtaskList});
 }
+class DatabaseFetched extends TextEvent {
+  final dynamic data;
+  DatabaseFetched({required this.data});
+}

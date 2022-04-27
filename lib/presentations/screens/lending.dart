@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:first_project/presentations/screens/home.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../bloc/auth/bloc.dart';
-import '../../generated/l10n.dart';
 import 'all_tasks_page.dart';
 import 'auth.dart';
 
@@ -14,9 +12,21 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isLoggedIn = true;
-    // return BlocBuilder<AuthBloc, AuthState>(
+    // return BlocConsumer<AuthBloc, AuthState>(
+    //   listener: (context, state) {
+    //     if (state is UnAuthenticated) {
+    //       Navigator.of(context).pushAndRemoveUntil(
+    //           MaterialPageRoute(builder: (context) => const AuthorizationPage()),
+    //               (Route<dynamic> route) => false);
+    //     }
+    //   },
+    //   buildWhen: ((previous, current) {
+    //     if (current is UnAuthenticated) {
+    //       return false;
+    //     }
+    //     return true;
+    //   }),
     //   builder: (context, state) {
-    //     print(state);
     //     if (state is Authenticated) {
     //       return PageView(
     //         children: const [

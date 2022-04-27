@@ -1,6 +1,8 @@
 import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
+import 'package:meta/meta.dart';
+import 'package:first_project/data/repository/auth.dart';
 
-import '../../data/repository/auth.dart';
 part 'state.dart';
 part 'event.dart';
 

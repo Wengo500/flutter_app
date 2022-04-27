@@ -1,11 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:first_project/bloc/create_tasks_input_data/state.dart';
+import 'package:first_project/data/repository/tasks_repo.dart';
+import 'package:first_project/domain/bloc/create_tasks_input_data/state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'event.dart';
 
 class CreateTaskInputData extends Bloc <TextEvent, TextState> {
-  CreateTaskInputData() : super(TextAddedState(name: '', description: '', subtasksList: [])){
+  final TaskRepo _taskRepo;
+  CreateTaskInputData(this._taskRepo) :
+        super(TextAddedState(name: '', description: '', subtasksList: [])){
+
     void addDataToFirebase() => {
       FirebaseFirestore.instance.collection('model').add({
         'name': state.name,

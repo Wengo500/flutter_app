@@ -4,20 +4,20 @@ class Task{
   final String name;
   final String description;
   final bool progress;
-  final List subtask;
+  final List subtasks;
 
   Task({
     required this.name,
     required this.description,
     required this.progress,
-    required this.subtask
+    required this.subtasks
 });
   factory Task.fromJson(Map<dynamic, dynamic> json){
     return Task(
       name: json['name'],
       description: json['description'],
       progress: json['progress'],
-      subtask: [],
+      subtasks: ['subtasks'],
     );
   }
   factory Task.fromSnapshot(DocumentSnapshot snapshot) {

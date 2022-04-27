@@ -456,8 +456,6 @@ abstract class $CharacterStateLoadedCopyWith<$Res> {
           $Res Function(CharacterStateLoaded) then) =
       _$CharacterStateLoadedCopyWithImpl<$Res>;
   $Res call({Character characterLoaded});
-
-  $CharacterCopyWith<$Res> get characterLoaded;
 }
 
 /// @nodoc
@@ -481,13 +479,6 @@ class _$CharacterStateLoadedCopyWithImpl<$Res>
           : characterLoaded // ignore: cast_nullable_to_non_nullable
               as Character,
     ));
-  }
-
-  @override
-  $CharacterCopyWith<$Res> get characterLoaded {
-    return $CharacterCopyWith<$Res>(_value.characterLoaded, (value) {
-      return _then(_value.copyWith(characterLoaded: value));
-    });
   }
 }
 

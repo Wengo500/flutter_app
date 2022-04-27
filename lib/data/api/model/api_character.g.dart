@@ -1,39 +1,42 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'character.dart';
+part of 'api_character.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Charcter _$$_CharcterFromJson(Map<String, dynamic> json) => _$_Charcter(
-      info: Info.fromJson(json['info'] as Map<String, dynamic>),
-      results: (json['results'] as List<dynamic>)
-          .map((e) => Results.fromJson(e as Map<String, dynamic>))
+_$_ApiCharacter _$$_ApiCharacterFromJson(Map<String, dynamic> json) =>
+    _$_ApiCharacter(
+      apiInfo: ApiInfo.fromJson(json['apiInfo'] as Map<String, dynamic>),
+      apiResults: (json['apiResults'] as List<dynamic>)
+          .map((e) => ApiResults.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$_CharcterToJson(_$_Charcter instance) =>
+Map<String, dynamic> _$$_ApiCharacterToJson(_$_ApiCharacter instance) =>
     <String, dynamic>{
-      'info': instance.info,
-      'results': instance.results,
+      'apiInfo': instance.apiInfo,
+      'apiResults': instance.apiResults,
     };
 
-_$_Info _$$_InfoFromJson(Map<String, dynamic> json) => _$_Info(
+_$_ApiInfo _$$_ApiInfoFromJson(Map<String, dynamic> json) => _$_ApiInfo(
       count: json['count'] as int,
       pages: json['pages'] as int,
       next: json['next'] as String?,
       prev: json['prev'] as String?,
     );
 
-Map<String, dynamic> _$$_InfoToJson(_$_Info instance) => <String, dynamic>{
+Map<String, dynamic> _$$_ApiInfoToJson(_$_ApiInfo instance) =>
+    <String, dynamic>{
       'count': instance.count,
       'pages': instance.pages,
       'next': instance.next,
       'prev': instance.prev,
     };
 
-_$_Results _$$_ResultsFromJson(Map<String, dynamic> json) => _$_Results(
+_$_ApiResults _$$_ApiResultsFromJson(Map<String, dynamic> json) =>
+    _$_ApiResults(
       id: json['id'] as int,
       name: json['name'] as String,
       status: json['status'] as String,
@@ -42,7 +45,7 @@ _$_Results _$$_ResultsFromJson(Map<String, dynamic> json) => _$_Results(
       image: json['image'] as String,
     );
 
-Map<String, dynamic> _$$_ResultsToJson(_$_Results instance) =>
+Map<String, dynamic> _$$_ApiResultsToJson(_$_ApiResults instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

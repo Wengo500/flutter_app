@@ -1,4 +1,4 @@
-import 'package:first_project/bloc/create_subtask/state.dart';
+import 'package:first_project/domain/bloc/create_subtask/state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'event.dart';

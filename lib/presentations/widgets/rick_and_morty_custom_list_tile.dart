@@ -1,12 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:first_project/domain/model/character.dart';
 import 'package:flutter/material.dart';
-import '../../data/models/character.dart';
 import 'character_status.dart';
 
 class CustomListTile extends StatelessWidget {
   const CustomListTile({Key? key, required this.result}) : super(key: key);
 
-  final Results result;
+  final Result result;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class CustomListTile extends StatelessWidget {
               padding: const EdgeInsets.only(right: 10),
               width: MediaQuery.of(context).size.width / 3.3,
               child: CachedNetworkImage(
-                imageUrl: result.image,
+                imageUrl: result.image as String,
                 placeholder: (context, url) => const CircularProgressIndicator(
                   color: Colors.grey,
                 ),
@@ -36,7 +36,7 @@ class CustomListTile extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 1.9,
                   child: Text(
-                    result.name,
+                    result.name as String,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(color: Colors.white),
                   ),
@@ -65,7 +65,7 @@ class CustomListTile extends StatelessWidget {
                           ),
                           const SizedBox(height: 2,),
                           Text(
-                            result.species,
+                            result.species as String,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(color: Colors.white),
                           )
@@ -80,7 +80,7 @@ class CustomListTile extends StatelessWidget {
                           ),
                           const SizedBox(height: 2,),
                           Text(
-                            result.gender,
+                            result.gender as String,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(color: Colors.white),
                           )

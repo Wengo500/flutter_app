@@ -1,7 +1,7 @@
 part of 'bloc.dart';
 
-
-abstract class AuthEvent {
+abstract class AuthEvent extends Equatable {
+  @override
   List<Object> get props => [];
 }
 
@@ -13,7 +13,7 @@ class SignInRequested extends AuthEvent {
   SignInRequested(this.email, this.password);
 }
 
-// When the user signing up with eamail and password this event is called and the [AuthRepository] is called to sign up the user
+// When the user signing up with email and password this event is called and the [AuthRepository] is called to sign up the user
 class SignUpRequested extends AuthEvent {
   final String email;
   final String password;

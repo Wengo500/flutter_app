@@ -1,8 +1,8 @@
 import 'package:first_project/data/repository/auth.dart';
+import 'package:first_project/domain/bloc/auth/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../bloc/auth/bloc.dart';
 
 class AuthorizationPage extends StatefulWidget {
   const AuthorizationPage({Key? key}) : super(key: key);
@@ -152,41 +152,41 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
           _logo(),
           const SizedBox(height: 60,),
           (
-            showLogin
-            ? Column(
-              children: <Widget>[
-                _form('LOGIN', _loginButtonAction),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: GestureDetector(
-                    child: const Text('Not registered yet? Register',
-                        style: TextStyle(fontSize: 20, color: Colors.white)),
-                    onTap: () {
-                      setState(() {
-                        showLogin = false;
-                      });
-                    },
-                  ),
-                )
-              ],
-            )
-           : Column(
-              children: <Widget>[
-                _form('REGISTER', _registerButtonAction),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: GestureDetector(
-                    child: const Text('Already registered? Login',
-                        style: TextStyle(fontSize: 20, color: Colors.white)),
-                    onTap: () {
-                      setState(() {
-                        showLogin = true;
-                      });
-                    },
-                  ),
-                )
-              ],
-            )
+              showLogin
+                  ? Column(
+                children: <Widget>[
+                  _form('LOGIN', _loginButtonAction),
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: GestureDetector(
+                      child: const Text('Not registered yet? Register',
+                          style: TextStyle(fontSize: 20, color: Colors.white)),
+                      onTap: () {
+                        setState(() {
+                          showLogin = false;
+                        });
+                      },
+                    ),
+                  )
+                ],
+              )
+                  : Column(
+                children: <Widget>[
+                  _form('REGISTER', _registerButtonAction),
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: GestureDetector(
+                      child: const Text('Already registered? Login',
+                          style: TextStyle(fontSize: 20, color: Colors.white)),
+                      onTap: () {
+                        setState(() {
+                          showLogin = true;
+                        });
+                      },
+                    ),
+                  )
+                ],
+              )
           ),
         ],
       ),

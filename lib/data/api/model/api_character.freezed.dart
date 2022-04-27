@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'character.dart';
+part of 'api_character.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,191 +14,199 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Character _$CharacterFromJson(Map<String, dynamic> json) {
-  return _Charcter.fromJson(json);
+ApiCharacter _$ApiCharacterFromJson(Map<String, dynamic> json) {
+  return _ApiCharacter.fromJson(json);
 }
 
 /// @nodoc
-class _$CharacterTearOff {
-  const _$CharacterTearOff();
+class _$ApiCharacterTearOff {
+  const _$ApiCharacterTearOff();
 
-  _Charcter call({required Info info, required List<Results> results}) {
-    return _Charcter(
-      info: info,
-      results: results,
+  _ApiCharacter call(
+      {required ApiInfo apiInfo, required List<ApiResults> apiResults}) {
+    return _ApiCharacter(
+      apiInfo: apiInfo,
+      apiResults: apiResults,
     );
   }
 
-  Character fromJson(Map<String, Object?> json) {
-    return Character.fromJson(json);
+  ApiCharacter fromJson(Map<String, Object?> json) {
+    return ApiCharacter.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Character = _$CharacterTearOff();
+const $ApiCharacter = _$ApiCharacterTearOff();
 
 /// @nodoc
-mixin _$Character {
-  Info get info => throw _privateConstructorUsedError;
-  List<Results> get results => throw _privateConstructorUsedError;
+mixin _$ApiCharacter {
+  ApiInfo get apiInfo => throw _privateConstructorUsedError;
+  List<ApiResults> get apiResults => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CharacterCopyWith<Character> get copyWith =>
+  $ApiCharacterCopyWith<ApiCharacter> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CharacterCopyWith<$Res> {
-  factory $CharacterCopyWith(Character value, $Res Function(Character) then) =
-      _$CharacterCopyWithImpl<$Res>;
-  $Res call({Info info, List<Results> results});
+abstract class $ApiCharacterCopyWith<$Res> {
+  factory $ApiCharacterCopyWith(
+          ApiCharacter value, $Res Function(ApiCharacter) then) =
+      _$ApiCharacterCopyWithImpl<$Res>;
+  $Res call({ApiInfo apiInfo, List<ApiResults> apiResults});
 
-  $InfoCopyWith<$Res> get info;
+  $ApiInfoCopyWith<$Res> get apiInfo;
 }
 
 /// @nodoc
-class _$CharacterCopyWithImpl<$Res> implements $CharacterCopyWith<$Res> {
-  _$CharacterCopyWithImpl(this._value, this._then);
+class _$ApiCharacterCopyWithImpl<$Res> implements $ApiCharacterCopyWith<$Res> {
+  _$ApiCharacterCopyWithImpl(this._value, this._then);
 
-  final Character _value;
+  final ApiCharacter _value;
   // ignore: unused_field
-  final $Res Function(Character) _then;
+  final $Res Function(ApiCharacter) _then;
 
   @override
   $Res call({
-    Object? info = freezed,
-    Object? results = freezed,
+    Object? apiInfo = freezed,
+    Object? apiResults = freezed,
   }) {
     return _then(_value.copyWith(
-      info: info == freezed
-          ? _value.info
-          : info // ignore: cast_nullable_to_non_nullable
-              as Info,
-      results: results == freezed
-          ? _value.results
-          : results // ignore: cast_nullable_to_non_nullable
-              as List<Results>,
+      apiInfo: apiInfo == freezed
+          ? _value.apiInfo
+          : apiInfo // ignore: cast_nullable_to_non_nullable
+              as ApiInfo,
+      apiResults: apiResults == freezed
+          ? _value.apiResults
+          : apiResults // ignore: cast_nullable_to_non_nullable
+              as List<ApiResults>,
     ));
   }
 
   @override
-  $InfoCopyWith<$Res> get info {
-    return $InfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
+  $ApiInfoCopyWith<$Res> get apiInfo {
+    return $ApiInfoCopyWith<$Res>(_value.apiInfo, (value) {
+      return _then(_value.copyWith(apiInfo: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$CharcterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
-  factory _$CharcterCopyWith(_Charcter value, $Res Function(_Charcter) then) =
-      __$CharcterCopyWithImpl<$Res>;
+abstract class _$ApiCharacterCopyWith<$Res>
+    implements $ApiCharacterCopyWith<$Res> {
+  factory _$ApiCharacterCopyWith(
+          _ApiCharacter value, $Res Function(_ApiCharacter) then) =
+      __$ApiCharacterCopyWithImpl<$Res>;
   @override
-  $Res call({Info info, List<Results> results});
+  $Res call({ApiInfo apiInfo, List<ApiResults> apiResults});
 
   @override
-  $InfoCopyWith<$Res> get info;
+  $ApiInfoCopyWith<$Res> get apiInfo;
 }
 
 /// @nodoc
-class __$CharcterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
-    implements _$CharcterCopyWith<$Res> {
-  __$CharcterCopyWithImpl(_Charcter _value, $Res Function(_Charcter) _then)
-      : super(_value, (v) => _then(v as _Charcter));
+class __$ApiCharacterCopyWithImpl<$Res> extends _$ApiCharacterCopyWithImpl<$Res>
+    implements _$ApiCharacterCopyWith<$Res> {
+  __$ApiCharacterCopyWithImpl(
+      _ApiCharacter _value, $Res Function(_ApiCharacter) _then)
+      : super(_value, (v) => _then(v as _ApiCharacter));
 
   @override
-  _Charcter get _value => super._value as _Charcter;
+  _ApiCharacter get _value => super._value as _ApiCharacter;
 
   @override
   $Res call({
-    Object? info = freezed,
-    Object? results = freezed,
+    Object? apiInfo = freezed,
+    Object? apiResults = freezed,
   }) {
-    return _then(_Charcter(
-      info: info == freezed
-          ? _value.info
-          : info // ignore: cast_nullable_to_non_nullable
-              as Info,
-      results: results == freezed
-          ? _value.results
-          : results // ignore: cast_nullable_to_non_nullable
-              as List<Results>,
+    return _then(_ApiCharacter(
+      apiInfo: apiInfo == freezed
+          ? _value.apiInfo
+          : apiInfo // ignore: cast_nullable_to_non_nullable
+              as ApiInfo,
+      apiResults: apiResults == freezed
+          ? _value.apiResults
+          : apiResults // ignore: cast_nullable_to_non_nullable
+              as List<ApiResults>,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_Charcter implements _Charcter {
-  const _$_Charcter({required this.info, required this.results});
+class _$_ApiCharacter implements _ApiCharacter {
+  const _$_ApiCharacter({required this.apiInfo, required this.apiResults});
 
-  factory _$_Charcter.fromJson(Map<String, dynamic> json) =>
-      _$$_CharcterFromJson(json);
+  factory _$_ApiCharacter.fromJson(Map<String, dynamic> json) =>
+      _$$_ApiCharacterFromJson(json);
 
   @override
-  final Info info;
+  final ApiInfo apiInfo;
   @override
-  final List<Results> results;
+  final List<ApiResults> apiResults;
 
   @override
   String toString() {
-    return 'Character(info: $info, results: $results)';
+    return 'ApiCharacter(apiInfo: $apiInfo, apiResults: $apiResults)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Charcter &&
-            const DeepCollectionEquality().equals(other.info, info) &&
-            const DeepCollectionEquality().equals(other.results, results));
+            other is _ApiCharacter &&
+            const DeepCollectionEquality().equals(other.apiInfo, apiInfo) &&
+            const DeepCollectionEquality()
+                .equals(other.apiResults, apiResults));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(info),
-      const DeepCollectionEquality().hash(results));
+      const DeepCollectionEquality().hash(apiInfo),
+      const DeepCollectionEquality().hash(apiResults));
 
   @JsonKey(ignore: true)
   @override
-  _$CharcterCopyWith<_Charcter> get copyWith =>
-      __$CharcterCopyWithImpl<_Charcter>(this, _$identity);
+  _$ApiCharacterCopyWith<_ApiCharacter> get copyWith =>
+      __$ApiCharacterCopyWithImpl<_ApiCharacter>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CharcterToJson(this);
+    return _$$_ApiCharacterToJson(this);
   }
 }
 
-abstract class _Charcter implements Character {
-  const factory _Charcter(
-      {required Info info, required List<Results> results}) = _$_Charcter;
+abstract class _ApiCharacter implements ApiCharacter {
+  const factory _ApiCharacter(
+      {required ApiInfo apiInfo,
+      required List<ApiResults> apiResults}) = _$_ApiCharacter;
 
-  factory _Charcter.fromJson(Map<String, dynamic> json) = _$_Charcter.fromJson;
+  factory _ApiCharacter.fromJson(Map<String, dynamic> json) =
+      _$_ApiCharacter.fromJson;
 
   @override
-  Info get info;
+  ApiInfo get apiInfo;
   @override
-  List<Results> get results;
+  List<ApiResults> get apiResults;
   @override
   @JsonKey(ignore: true)
-  _$CharcterCopyWith<_Charcter> get copyWith =>
+  _$ApiCharacterCopyWith<_ApiCharacter> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-Info _$InfoFromJson(Map<String, dynamic> json) {
-  return _Info.fromJson(json);
+ApiInfo _$ApiInfoFromJson(Map<String, dynamic> json) {
+  return _ApiInfo.fromJson(json);
 }
 
 /// @nodoc
-class _$InfoTearOff {
-  const _$InfoTearOff();
+class _$ApiInfoTearOff {
+  const _$ApiInfoTearOff();
 
-  _Info call(
+  _ApiInfo call(
       {required int count, required int pages, String? next, String? prev}) {
-    return _Info(
+    return _ApiInfo(
       count: count,
       pages: pages,
       next: next,
@@ -206,16 +214,16 @@ class _$InfoTearOff {
     );
   }
 
-  Info fromJson(Map<String, Object?> json) {
-    return Info.fromJson(json);
+  ApiInfo fromJson(Map<String, Object?> json) {
+    return ApiInfo.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Info = _$InfoTearOff();
+const $ApiInfo = _$ApiInfoTearOff();
 
 /// @nodoc
-mixin _$Info {
+mixin _$ApiInfo {
   int get count => throw _privateConstructorUsedError;
   int get pages => throw _privateConstructorUsedError;
   String? get next => throw _privateConstructorUsedError;
@@ -223,23 +231,23 @@ mixin _$Info {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $InfoCopyWith<Info> get copyWith => throw _privateConstructorUsedError;
+  $ApiInfoCopyWith<ApiInfo> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $InfoCopyWith<$Res> {
-  factory $InfoCopyWith(Info value, $Res Function(Info) then) =
-      _$InfoCopyWithImpl<$Res>;
+abstract class $ApiInfoCopyWith<$Res> {
+  factory $ApiInfoCopyWith(ApiInfo value, $Res Function(ApiInfo) then) =
+      _$ApiInfoCopyWithImpl<$Res>;
   $Res call({int count, int pages, String? next, String? prev});
 }
 
 /// @nodoc
-class _$InfoCopyWithImpl<$Res> implements $InfoCopyWith<$Res> {
-  _$InfoCopyWithImpl(this._value, this._then);
+class _$ApiInfoCopyWithImpl<$Res> implements $ApiInfoCopyWith<$Res> {
+  _$ApiInfoCopyWithImpl(this._value, this._then);
 
-  final Info _value;
+  final ApiInfo _value;
   // ignore: unused_field
-  final $Res Function(Info) _then;
+  final $Res Function(ApiInfo) _then;
 
   @override
   $Res call({
@@ -270,21 +278,21 @@ class _$InfoCopyWithImpl<$Res> implements $InfoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$InfoCopyWith<$Res> implements $InfoCopyWith<$Res> {
-  factory _$InfoCopyWith(_Info value, $Res Function(_Info) then) =
-      __$InfoCopyWithImpl<$Res>;
+abstract class _$ApiInfoCopyWith<$Res> implements $ApiInfoCopyWith<$Res> {
+  factory _$ApiInfoCopyWith(_ApiInfo value, $Res Function(_ApiInfo) then) =
+      __$ApiInfoCopyWithImpl<$Res>;
   @override
   $Res call({int count, int pages, String? next, String? prev});
 }
 
 /// @nodoc
-class __$InfoCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res>
-    implements _$InfoCopyWith<$Res> {
-  __$InfoCopyWithImpl(_Info _value, $Res Function(_Info) _then)
-      : super(_value, (v) => _then(v as _Info));
+class __$ApiInfoCopyWithImpl<$Res> extends _$ApiInfoCopyWithImpl<$Res>
+    implements _$ApiInfoCopyWith<$Res> {
+  __$ApiInfoCopyWithImpl(_ApiInfo _value, $Res Function(_ApiInfo) _then)
+      : super(_value, (v) => _then(v as _ApiInfo));
 
   @override
-  _Info get _value => super._value as _Info;
+  _ApiInfo get _value => super._value as _ApiInfo;
 
   @override
   $Res call({
@@ -293,7 +301,7 @@ class __$InfoCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res>
     Object? next = freezed,
     Object? prev = freezed,
   }) {
-    return _then(_Info(
+    return _then(_ApiInfo(
       count: count == freezed
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
@@ -316,11 +324,12 @@ class __$InfoCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Info implements _Info {
-  const _$_Info(
+class _$_ApiInfo implements _ApiInfo {
+  const _$_ApiInfo(
       {required this.count, required this.pages, this.next, this.prev});
 
-  factory _$_Info.fromJson(Map<String, dynamic> json) => _$$_InfoFromJson(json);
+  factory _$_ApiInfo.fromJson(Map<String, dynamic> json) =>
+      _$$_ApiInfoFromJson(json);
 
   @override
   final int count;
@@ -333,14 +342,14 @@ class _$_Info implements _Info {
 
   @override
   String toString() {
-    return 'Info(count: $count, pages: $pages, next: $next, prev: $prev)';
+    return 'ApiInfo(count: $count, pages: $pages, next: $next, prev: $prev)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Info &&
+            other is _ApiInfo &&
             const DeepCollectionEquality().equals(other.count, count) &&
             const DeepCollectionEquality().equals(other.pages, pages) &&
             const DeepCollectionEquality().equals(other.next, next) &&
@@ -357,23 +366,23 @@ class _$_Info implements _Info {
 
   @JsonKey(ignore: true)
   @override
-  _$InfoCopyWith<_Info> get copyWith =>
-      __$InfoCopyWithImpl<_Info>(this, _$identity);
+  _$ApiInfoCopyWith<_ApiInfo> get copyWith =>
+      __$ApiInfoCopyWithImpl<_ApiInfo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_InfoToJson(this);
+    return _$$_ApiInfoToJson(this);
   }
 }
 
-abstract class _Info implements Info {
-  const factory _Info(
+abstract class _ApiInfo implements ApiInfo {
+  const factory _ApiInfo(
       {required int count,
       required int pages,
       String? next,
-      String? prev}) = _$_Info;
+      String? prev}) = _$_ApiInfo;
 
-  factory _Info.fromJson(Map<String, dynamic> json) = _$_Info.fromJson;
+  factory _ApiInfo.fromJson(Map<String, dynamic> json) = _$_ApiInfo.fromJson;
 
   @override
   int get count;
@@ -385,25 +394,26 @@ abstract class _Info implements Info {
   String? get prev;
   @override
   @JsonKey(ignore: true)
-  _$InfoCopyWith<_Info> get copyWith => throw _privateConstructorUsedError;
+  _$ApiInfoCopyWith<_ApiInfo> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-Results _$ResultsFromJson(Map<String, dynamic> json) {
-  return _Results.fromJson(json);
+ApiResults _$ApiResultsFromJson(Map<String, dynamic> json) {
+  return _ApiResults.fromJson(json);
 }
 
 /// @nodoc
-class _$ResultsTearOff {
-  const _$ResultsTearOff();
+class _$ApiResultsTearOff {
+  const _$ApiResultsTearOff();
 
-  _Results call(
+  _ApiResults call(
       {required int id,
       required String name,
       required String status,
       required String species,
       required String gender,
       required String image}) {
-    return _Results(
+    return _ApiResults(
       id: id,
       name: name,
       status: status,
@@ -413,16 +423,16 @@ class _$ResultsTearOff {
     );
   }
 
-  Results fromJson(Map<String, Object?> json) {
-    return Results.fromJson(json);
+  ApiResults fromJson(Map<String, Object?> json) {
+    return ApiResults.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Results = _$ResultsTearOff();
+const $ApiResults = _$ApiResultsTearOff();
 
 /// @nodoc
-mixin _$Results {
+mixin _$ApiResults {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
@@ -432,13 +442,15 @@ mixin _$Results {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ResultsCopyWith<Results> get copyWith => throw _privateConstructorUsedError;
+  $ApiResultsCopyWith<ApiResults> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ResultsCopyWith<$Res> {
-  factory $ResultsCopyWith(Results value, $Res Function(Results) then) =
-      _$ResultsCopyWithImpl<$Res>;
+abstract class $ApiResultsCopyWith<$Res> {
+  factory $ApiResultsCopyWith(
+          ApiResults value, $Res Function(ApiResults) then) =
+      _$ApiResultsCopyWithImpl<$Res>;
   $Res call(
       {int id,
       String name,
@@ -449,12 +461,12 @@ abstract class $ResultsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ResultsCopyWithImpl<$Res> implements $ResultsCopyWith<$Res> {
-  _$ResultsCopyWithImpl(this._value, this._then);
+class _$ApiResultsCopyWithImpl<$Res> implements $ApiResultsCopyWith<$Res> {
+  _$ApiResultsCopyWithImpl(this._value, this._then);
 
-  final Results _value;
+  final ApiResults _value;
   // ignore: unused_field
-  final $Res Function(Results) _then;
+  final $Res Function(ApiResults) _then;
 
   @override
   $Res call({
@@ -495,9 +507,10 @@ class _$ResultsCopyWithImpl<$Res> implements $ResultsCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ResultsCopyWith<$Res> implements $ResultsCopyWith<$Res> {
-  factory _$ResultsCopyWith(_Results value, $Res Function(_Results) then) =
-      __$ResultsCopyWithImpl<$Res>;
+abstract class _$ApiResultsCopyWith<$Res> implements $ApiResultsCopyWith<$Res> {
+  factory _$ApiResultsCopyWith(
+          _ApiResults value, $Res Function(_ApiResults) then) =
+      __$ApiResultsCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -509,13 +522,14 @@ abstract class _$ResultsCopyWith<$Res> implements $ResultsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ResultsCopyWithImpl<$Res> extends _$ResultsCopyWithImpl<$Res>
-    implements _$ResultsCopyWith<$Res> {
-  __$ResultsCopyWithImpl(_Results _value, $Res Function(_Results) _then)
-      : super(_value, (v) => _then(v as _Results));
+class __$ApiResultsCopyWithImpl<$Res> extends _$ApiResultsCopyWithImpl<$Res>
+    implements _$ApiResultsCopyWith<$Res> {
+  __$ApiResultsCopyWithImpl(
+      _ApiResults _value, $Res Function(_ApiResults) _then)
+      : super(_value, (v) => _then(v as _ApiResults));
 
   @override
-  _Results get _value => super._value as _Results;
+  _ApiResults get _value => super._value as _ApiResults;
 
   @override
   $Res call({
@@ -526,7 +540,7 @@ class __$ResultsCopyWithImpl<$Res> extends _$ResultsCopyWithImpl<$Res>
     Object? gender = freezed,
     Object? image = freezed,
   }) {
-    return _then(_Results(
+    return _then(_ApiResults(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -557,8 +571,8 @@ class __$ResultsCopyWithImpl<$Res> extends _$ResultsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Results implements _Results {
-  const _$_Results(
+class _$_ApiResults implements _ApiResults {
+  const _$_ApiResults(
       {required this.id,
       required this.name,
       required this.status,
@@ -566,8 +580,8 @@ class _$_Results implements _Results {
       required this.gender,
       required this.image});
 
-  factory _$_Results.fromJson(Map<String, dynamic> json) =>
-      _$$_ResultsFromJson(json);
+  factory _$_ApiResults.fromJson(Map<String, dynamic> json) =>
+      _$$_ApiResultsFromJson(json);
 
   @override
   final int id;
@@ -584,14 +598,14 @@ class _$_Results implements _Results {
 
   @override
   String toString() {
-    return 'Results(id: $id, name: $name, status: $status, species: $species, gender: $gender, image: $image)';
+    return 'ApiResults(id: $id, name: $name, status: $status, species: $species, gender: $gender, image: $image)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Results &&
+            other is _ApiResults &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.status, status) &&
@@ -612,25 +626,26 @@ class _$_Results implements _Results {
 
   @JsonKey(ignore: true)
   @override
-  _$ResultsCopyWith<_Results> get copyWith =>
-      __$ResultsCopyWithImpl<_Results>(this, _$identity);
+  _$ApiResultsCopyWith<_ApiResults> get copyWith =>
+      __$ApiResultsCopyWithImpl<_ApiResults>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ResultsToJson(this);
+    return _$$_ApiResultsToJson(this);
   }
 }
 
-abstract class _Results implements Results {
-  const factory _Results(
+abstract class _ApiResults implements ApiResults {
+  const factory _ApiResults(
       {required int id,
       required String name,
       required String status,
       required String species,
       required String gender,
-      required String image}) = _$_Results;
+      required String image}) = _$_ApiResults;
 
-  factory _Results.fromJson(Map<String, dynamic> json) = _$_Results.fromJson;
+  factory _ApiResults.fromJson(Map<String, dynamic> json) =
+      _$_ApiResults.fromJson;
 
   @override
   int get id;
@@ -646,6 +661,6 @@ abstract class _Results implements Results {
   String get image;
   @override
   @JsonKey(ignore: true)
-  _$ResultsCopyWith<_Results> get copyWith =>
+  _$ApiResultsCopyWith<_ApiResults> get copyWith =>
       throw _privateConstructorUsedError;
 }
