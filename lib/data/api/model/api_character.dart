@@ -6,8 +6,8 @@ part 'api_character.g.dart';
 @freezed
 class ApiCharacter with _$ApiCharacter {
   const factory ApiCharacter({
-    required ApiInfo apiInfo,
-    required List<ApiResults> apiResults,
+    required ApiInfo info,
+    required List<ApiResults> results,
   }) = _ApiCharacter;
   factory ApiCharacter.fromJson(Map<String, dynamic> json) => _$ApiCharacterFromJson(json);
 }

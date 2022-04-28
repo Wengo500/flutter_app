@@ -8,16 +8,16 @@ part of 'api_character.dart';
 
 _$_ApiCharacter _$$_ApiCharacterFromJson(Map<String, dynamic> json) =>
     _$_ApiCharacter(
-      apiInfo: ApiInfo.fromJson(json['apiInfo'] as Map<String, dynamic>),
-      apiResults: (json['apiResults'] as List<dynamic>)
+      info: ApiInfo.fromJson(json['info'] as Map<String, dynamic>),
+      results: (json['results'] as List<dynamic>)
           .map((e) => ApiResults.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
 Map<String, dynamic> _$$_ApiCharacterToJson(_$_ApiCharacter instance) =>
     <String, dynamic>{
-      'apiInfo': instance.apiInfo,
-      'apiResults': instance.apiResults,
+      'info': instance.info,
+      'results': instance.results,
     };
 
 _$_ApiInfo _$$_ApiInfoFromJson(Map<String, dynamic> json) => _$_ApiInfo(

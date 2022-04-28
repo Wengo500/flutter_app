@@ -10,15 +10,6 @@ part 'state.dart';
 
 class CharacterBlock extends Bloc<CharacterEvent, CharacterState> {
   final CharacterRepository characterRepo;
-  // Future<Character> getCharacter({
-  //   @required int? page,
-  //   @required String? name,
-  // }) async {
-  //   return (page != null && name != null)
-  //       ? await characterRepo.getCharacter(page: page, name: name)
-  //       : Character();
-  // }
-
   CharacterBlock({required this.characterRepo}) : super(const CharacterState.loading()){
     on<CharacterEventFetch>((event, emit) async {
       emit(const CharacterState.loading());

@@ -13,7 +13,7 @@ class ApiUtil {
     @required String? name,
   }) async {
     final body = GetCharacterBody(page: page, name: name);
-    final result = await _characterService.getCharacter();
+    final result = await _characterService.getCharacter(body);
     return CharacterMapper.fromApi(result);
   }
 }

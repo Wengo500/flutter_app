@@ -23,10 +23,10 @@ class _$ApiCharacterTearOff {
   const _$ApiCharacterTearOff();
 
   _ApiCharacter call(
-      {required ApiInfo apiInfo, required List<ApiResults> apiResults}) {
+      {required ApiInfo info, required List<ApiResults> results}) {
     return _ApiCharacter(
-      apiInfo: apiInfo,
-      apiResults: apiResults,
+      info: info,
+      results: results,
     );
   }
 
@@ -40,8 +40,8 @@ const $ApiCharacter = _$ApiCharacterTearOff();
 
 /// @nodoc
 mixin _$ApiCharacter {
-  ApiInfo get apiInfo => throw _privateConstructorUsedError;
-  List<ApiResults> get apiResults => throw _privateConstructorUsedError;
+  ApiInfo get info => throw _privateConstructorUsedError;
+  List<ApiResults> get results => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,9 +54,9 @@ abstract class $ApiCharacterCopyWith<$Res> {
   factory $ApiCharacterCopyWith(
           ApiCharacter value, $Res Function(ApiCharacter) then) =
       _$ApiCharacterCopyWithImpl<$Res>;
-  $Res call({ApiInfo apiInfo, List<ApiResults> apiResults});
+  $Res call({ApiInfo info, List<ApiResults> results});
 
-  $ApiInfoCopyWith<$Res> get apiInfo;
+  $ApiInfoCopyWith<$Res> get info;
 }
 
 /// @nodoc
@@ -69,25 +69,25 @@ class _$ApiCharacterCopyWithImpl<$Res> implements $ApiCharacterCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? apiInfo = freezed,
-    Object? apiResults = freezed,
+    Object? info = freezed,
+    Object? results = freezed,
   }) {
     return _then(_value.copyWith(
-      apiInfo: apiInfo == freezed
-          ? _value.apiInfo
-          : apiInfo // ignore: cast_nullable_to_non_nullable
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
               as ApiInfo,
-      apiResults: apiResults == freezed
-          ? _value.apiResults
-          : apiResults // ignore: cast_nullable_to_non_nullable
+      results: results == freezed
+          ? _value.results
+          : results // ignore: cast_nullable_to_non_nullable
               as List<ApiResults>,
     ));
   }
 
   @override
-  $ApiInfoCopyWith<$Res> get apiInfo {
-    return $ApiInfoCopyWith<$Res>(_value.apiInfo, (value) {
-      return _then(_value.copyWith(apiInfo: value));
+  $ApiInfoCopyWith<$Res> get info {
+    return $ApiInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value));
     });
   }
 }
@@ -99,10 +99,10 @@ abstract class _$ApiCharacterCopyWith<$Res>
           _ApiCharacter value, $Res Function(_ApiCharacter) then) =
       __$ApiCharacterCopyWithImpl<$Res>;
   @override
-  $Res call({ApiInfo apiInfo, List<ApiResults> apiResults});
+  $Res call({ApiInfo info, List<ApiResults> results});
 
   @override
-  $ApiInfoCopyWith<$Res> get apiInfo;
+  $ApiInfoCopyWith<$Res> get info;
 }
 
 /// @nodoc
@@ -117,17 +117,17 @@ class __$ApiCharacterCopyWithImpl<$Res> extends _$ApiCharacterCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apiInfo = freezed,
-    Object? apiResults = freezed,
+    Object? info = freezed,
+    Object? results = freezed,
   }) {
     return _then(_ApiCharacter(
-      apiInfo: apiInfo == freezed
-          ? _value.apiInfo
-          : apiInfo // ignore: cast_nullable_to_non_nullable
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
               as ApiInfo,
-      apiResults: apiResults == freezed
-          ? _value.apiResults
-          : apiResults // ignore: cast_nullable_to_non_nullable
+      results: results == freezed
+          ? _value.results
+          : results // ignore: cast_nullable_to_non_nullable
               as List<ApiResults>,
     ));
   }
@@ -136,19 +136,19 @@ class __$ApiCharacterCopyWithImpl<$Res> extends _$ApiCharacterCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ApiCharacter implements _ApiCharacter {
-  const _$_ApiCharacter({required this.apiInfo, required this.apiResults});
+  const _$_ApiCharacter({required this.info, required this.results});
 
   factory _$_ApiCharacter.fromJson(Map<String, dynamic> json) =>
       _$$_ApiCharacterFromJson(json);
 
   @override
-  final ApiInfo apiInfo;
+  final ApiInfo info;
   @override
-  final List<ApiResults> apiResults;
+  final List<ApiResults> results;
 
   @override
   String toString() {
-    return 'ApiCharacter(apiInfo: $apiInfo, apiResults: $apiResults)';
+    return 'ApiCharacter(info: $info, results: $results)';
   }
 
   @override
@@ -156,16 +156,15 @@ class _$_ApiCharacter implements _ApiCharacter {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ApiCharacter &&
-            const DeepCollectionEquality().equals(other.apiInfo, apiInfo) &&
-            const DeepCollectionEquality()
-                .equals(other.apiResults, apiResults));
+            const DeepCollectionEquality().equals(other.info, info) &&
+            const DeepCollectionEquality().equals(other.results, results));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(apiInfo),
-      const DeepCollectionEquality().hash(apiResults));
+      const DeepCollectionEquality().hash(info),
+      const DeepCollectionEquality().hash(results));
 
   @JsonKey(ignore: true)
   @override
@@ -180,16 +179,16 @@ class _$_ApiCharacter implements _ApiCharacter {
 
 abstract class _ApiCharacter implements ApiCharacter {
   const factory _ApiCharacter(
-      {required ApiInfo apiInfo,
-      required List<ApiResults> apiResults}) = _$_ApiCharacter;
+      {required ApiInfo info,
+      required List<ApiResults> results}) = _$_ApiCharacter;
 
   factory _ApiCharacter.fromJson(Map<String, dynamic> json) =
       _$_ApiCharacter.fromJson;
 
   @override
-  ApiInfo get apiInfo;
+  ApiInfo get info;
   @override
-  List<ApiResults> get apiResults;
+  List<ApiResults> get results;
   @override
   @JsonKey(ignore: true)
   _$ApiCharacterCopyWith<_ApiCharacter> get copyWith =>
